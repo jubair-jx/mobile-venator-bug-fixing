@@ -1,74 +1,70 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Phone Hunter</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-</head>
+    <title>Mobile Hunter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <body>
+    
+  
+    <!-- search button -->
+    <div class="d-flex align-items-center justify-content-center my-5">
+      <input  type="text" class="px-3 py-2 rounded" placeholder="search Product" name="" id="input-value">
+      <button onclick="searchButton()" class="btn btn-secondary px-3 ml-2 py-2">Search</button>
+  </div>
+  <!-- search button -->
 
-<body>
-    <header>
-        <h1>Welcome to my Phone Hunter!</h1>
-    </header>
-    <main class="container">
-        <section>
-            <div class="mb-3 w-50">
-                <input id="search-field" type="email" class="form-control" id="exampleFormControlInput1"
-                    placeholder="search your phone">
-                <div id="btn-search" class="btn btn-primary">Search</div>
-            </div>
-        </section>
-        <!-- loader -->
-        <section id="loader" class="d-none">
-            <div style="height: 400px;" class="d-flex justify-content-center align-items-center">
-                <div class="spinner-border  text-success" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-            </div>
-        </section>
-        <!-- display Search Result -->
-        <section>
-            <div id="phones-container" class="row row-cols-1 row-cols-md-3 g-4">
+    <h2 class="text-center mt-5">Our Product</h2>
 
-            </div>
-            <div id="no-found-message" class="mt-4 d-none">
-                <h3 class="text-warning">No Phone Found. Please try a new search</h3>
-            </div>
-            <div id="show-all" class="text-center d-none">
-                <div id="btn-show-all" class="btn btn-primary">Show All</div>
-            </div>
-        </section>
+
+
+    <section id="main-container" class="container row row-cols-1 row-cols-md-3 g-4 mx-auto text-center ">
         
-        <!-- modal contents -->
-        <section>
-            
-            <!-- Modal -->
-            <div class="modal text-white fade" id="phoneDetailModal" tabindex="-1" aria-labelledby="phoneDetailModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="phoneDetailModalLabel"></h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div id="phone-details" class="modal-body">
-                            
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-        crossorigin="anonymous"></script>
-    <script src="js/app.js"></script>
-</body>
+   
 
+
+    </section>
+    <h2 id="no-found" class="d-none text-center text-danger mt-5">No Found Product, Please Search Another Product!!!</h2>
+
+    <!-- spinners here -->
+    <div id="spinners" class="d-flex d-none justify-content-center align-items-center" style="height: 350px;">
+      <div class="spinner-border text-danger" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    <!-- spinners here -->
+    
+    
+    <!-- Modal -->
+<div class="modal fade" id="phone-details" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div id="phone-body" class="modal-body mx-auto">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+<!-- show all button -->
+<div id="show-all" class="d-none d-flex  justify-content-center align-items-center" style="height: 200px;">
+  <button id="btn-show-all" class="btn btn-primary">Show All</button>
+</div>
+<!-- show all button -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+  =<script src="js/app.js"></script>
+  </body>
 </html>
